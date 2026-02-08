@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  #root {
+    @apply min-h-screen w-full;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar - Premium style */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Premium button - Enhanced style */
+  .btn-primary {
+    @apply relative px-8 py-3.5 bg-gradient-to-r from-primary to-secondary
+           text-primary-foreground font-semibold rounded-full 
+           transition-all duration-300 overflow-hidden
+           hover:scale-105 hover:shadow-xl hover:shadow-primary/30
+           active:scale-95;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary-light to-accent
+           opacity-0 transition-opacity duration-300 pointer-events-none;
+    z-index: 1;
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-primary > * {
+    @apply relative z-10;
+  }
+
+  .btn-secondary {
+    @apply relative px-8 py-3.5 bg-card border border-border
+           text-foreground font-semibold rounded-full 
+           transition-all duration-300
+           hover:scale-105 hover:bg-card-hover hover:border-primary/50
+           active:scale-95;
+  }
+
+  .btn-outline {
+    @apply relative px-8 py-3.5 bg-transparent border-2 border-border 
+           text-foreground font-semibold rounded-full 
+           transition-all duration-300
+           hover:scale-105 hover:border-primary hover:text-primary
+           hover:bg-primary/10 active:scale-95;
+  }
+
+  /* Premium card - Enhanced style */
+  .card {
+    @apply bg-card border border-border rounded-2xl p-6
+           transition-all duration-300 relative overflow-hidden
+           hover:shadow-2xl hover:shadow-primary/20
+           hover:border-primary/50 hover:-translate-y-2
+           hover:bg-card-hover;
+  }
+
+  .card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5
+           opacity-0 transition-opacity duration-300 pointer-events-none;
+  }
+
+  .card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-xl bg-background/80 border border-border/50;
+  }
+
+  /* Gradient text - Enhanced */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r 
+           from-primary via-secondary to-accent;
+    background-size: 200% auto;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+  }
+
+  /* Pulse animation - Enhanced */
+  .pulse-glow {
+    animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.7;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4),
+                  0 0 30px rgba(139, 92, 246, 0.25),
+                  0 0 45px rgba(139, 92, 246, 0.15);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.6),
+                  0 0 50px rgba(139, 92, 246, 0.4),
+                  0 0 75px rgba(139, 92, 246, 0.25);
+    }
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r 
+           from-primary to-accent;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
