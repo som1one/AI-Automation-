@@ -7,51 +7,51 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Premium dark theme - Unique purple/blue gradient
+        // Operis - Black theme
         background: {
-          DEFAULT: '#0a0a0f',
-          secondary: '#0f0f1a',
-          tertiary: '#151520',
+          DEFAULT: '#000000', // Pure black
+          secondary: '#0a0a0a', // Very dark gray (almost black)
+          tertiary: '#111111', // Dark gray
         },
         foreground: {
-          DEFAULT: '#ffffff',
-          secondary: '#a0a0b0',
-          muted: '#6a6a7a',
+          DEFAULT: '#f0f0f0', // Light text
+          secondary: '#8b949e', // Muted text
+          muted: '#6e7681', // Very muted
         },
         primary: {
-          DEFAULT: '#8b5cf6', // Vibrant purple
+          DEFAULT: '#6b7fd7', // Cold steel blue (accent color)
           foreground: '#ffffff',
-          hover: '#9d6df7',
-          light: '#a78bfa',
+          hover: '#7a8de0',
+          light: '#8b9ce8',
         },
         secondary: {
-          DEFAULT: '#3b82f6', // Bright blue
+          DEFAULT: '#4a5568', // Neutral gray
           foreground: '#ffffff',
         },
         accent: {
-          DEFAULT: '#ec4899', // Pink accent
+          DEFAULT: '#6b7fd7', // Same as primary for consistency
           foreground: '#ffffff',
         },
         muted: {
-          DEFAULT: '#1a1a25',
-          foreground: '#a0a0b0',
+          DEFAULT: '#0a0a0a',
+          foreground: '#8b949e',
         },
         border: {
-          DEFAULT: '#252535',
-          hover: '#353545',
+          DEFAULT: '#1a1a1a', // Very subtle border (dark gray)
+          hover: '#2a2a2a',
         },
         card: {
-          DEFAULT: '#141420',
-          hover: '#1e1e2e',
+          DEFAULT: '#0a0a0a',
+          hover: '#111111',
         },
         destructive: {
-          DEFAULT: '#ef4444',
+          DEFAULT: '#f85149',
           foreground: '#ffffff',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'], // Strict grotesque
+        display: ['Inter', 'system-ui', 'sans-serif'], // Same for consistency
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {
@@ -64,9 +64,13 @@ export default {
         '3xl': '2rem',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(139, 92, 246, 0.4)',
-        'glow-lg': '0 0 40px rgba(139, 92, 246, 0.5)',
-        'glow-accent': '0 0 20px rgba(236, 72, 153, 0.4)',
+        'glow': '0 0 20px rgba(107, 127, 215, 0.2)',
+        'glow-lg': '0 0 40px rgba(107, 127, 215, 0.3)',
+        'glow-accent': '0 0 20px rgba(107, 127, 215, 0.2)',
+      },
+      spacing: {
+        'section': '8rem', // Large section spacing
+        'section-sm': '6rem',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

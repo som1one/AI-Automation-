@@ -28,7 +28,7 @@ const cases = [
 
 const CasesSection = () => {
   return (
-    <section id="cases" className="py-20 md:py-32 bg-background-secondary relative overflow-hidden">
+    <section id="cases" className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 via-secondary/5 to-transparent" />

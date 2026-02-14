@@ -118,18 +118,27 @@ const AIAssistant = () => {
         })}
       </motion.div>
 
-      {/* Scanning lines - более плавные и аккуратные */}
+      {/* Scanning line - плавная и аккуратная */}
       <motion.div
         animate={{
-          y: ['-100%', '100%', '-100%'],
+          y: ['-100%', '100%'],
         }}
         transition={{
-          duration: 5,
+          duration: 6,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: [0.4, 0, 0.6, 1], // cubic-bezier для более плавного движения
+          repeatType: 'loop',
         }}
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-transparent pointer-events-none"
-      />
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+      >
+        <div className="absolute left-0 right-0 h-1 bg-gradient-to-r 
+                     from-transparent via-primary/40 to-transparent
+                     blur-sm"
+        />
+        <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r 
+                     from-transparent via-primary/60 to-transparent"
+        />
+      </motion.div>
     </div>
   )
 }

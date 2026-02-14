@@ -86,17 +86,19 @@ const InteractiveDemo = () => {
           onClick={() => setIsPlaying(!isPlaying)}
           className="btn-primary flex items-center gap-2"
         >
-          {isPlaying ? (
-            <>
-              <Pause className="w-5 h-5" />
-              Пауза
-            </>
-          ) : (
-            <>
-              <Play className="w-5 h-5" />
-              Запустить демо
-            </>
-          )}
+          <span className="relative z-10 flex items-center gap-2">
+            {isPlaying ? (
+              <>
+                <Pause className="w-5 h-5" />
+                Пауза
+              </>
+            ) : (
+              <>
+                <Play className="w-5 h-5" />
+                Запустить демо
+              </>
+            )}
+          </span>
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}

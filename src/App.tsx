@@ -1,33 +1,52 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from '@/components/layout/Navigation'
+import ScrollToTop from '@/components/layout/ScrollToTop'
 import HeroSection from '@/sections/HeroSection'
-import ServicesSection from '@/sections/ServicesSection'
+import ProblemsSection from '@/sections/ProblemsSection'
+import WhatWeDoSection from '@/sections/WhatWeDoSection'
+import ExamplesSection from '@/sections/ExamplesSection'
+import DifferenceSection from '@/sections/DifferenceSection'
 import ProcessSection from '@/sections/ProcessSection'
-import CasesSection from '@/sections/CasesSection'
-import ContactsSection from '@/sections/ContactsSection'
-import AnimatedBackground from '@/components/visual/AnimatedBackground'
-import CursorFollower from '@/components/visual/CursorFollower'
-import ScrollProgress from '@/components/visual/ScrollProgress'
+import ForWhomSection from '@/sections/ForWhomSection'
+import CTASection from '@/sections/CTASection'
+import Footer from '@/sections/Footer'
+import ReputationControlPage from '@/pages/ReputationControlPage'
 
-function App() {
+function HomePage() {
   const [activeSection, setActiveSection] = useState<string>('home')
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <AnimatedBackground />
-      <CursorFollower />
-      <ScrollProgress />
-      
+    <>
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       
       <main className="relative z-10">
         <HeroSection setActiveSection={setActiveSection} />
-        <ServicesSection />
+        <ProblemsSection />
+        <WhatWeDoSection />
+        <ExamplesSection />
+        <DifferenceSection />
         <ProcessSection />
-        <CasesSection />
-        <ContactsSection />
+        <ForWhomSection />
+        <CTASection setActiveSection={setActiveSection} />
       </main>
-    </div>
+      
+      <Footer />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen text-foreground relative" style={{ backgroundColor: '#000000' }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/reputation-control" element={<ReputationControlPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
