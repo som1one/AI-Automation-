@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 
 interface HeroSectionProps {
@@ -7,6 +8,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ setActiveSection }: HeroSectionProps) => {
+  const navigate = useNavigate()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -107,14 +109,14 @@ const HeroSection = ({ setActiveSection }: HeroSectionProps) => {
             transition={{ duration: 1.2, delay: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            {/* Кнопка 1 - светлая, строгая */}
+            {/* Кнопка 1 - Попробовать сейчас (большая, белая) */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => scrollToSection('contacts')}
+              onClick={() => navigate('/reputation-control')}
               className="relative px-8 py-3.5 bg-foreground text-background font-semibold rounded-sm transition-all duration-300 flex items-center gap-2 overflow-hidden group"
             >
-              <span className="relative z-10">Обсудить процесс</span>
+              <span className="relative z-10">Попробовать сейчас</span>
               <ArrowRight className="w-4 h-4 relative z-10" />
               <motion.div
                 className="absolute inset-0 bg-primary/20"
@@ -124,14 +126,14 @@ const HeroSection = ({ setActiveSection }: HeroSectionProps) => {
               />
             </motion.button>
 
-            {/* Кнопка 2 - контурная с hover-свечением */}
+            {/* Кнопка 2 - Обсудить процесс (контурная) */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => scrollToSection('audit')}
+              onClick={() => scrollToSection('contacts')}
               className="relative px-8 py-3.5 bg-transparent border border-foreground/50 text-foreground font-semibold rounded-sm transition-all duration-300 overflow-hidden group"
             >
-              <span className="relative z-10">Получить аудит</span>
+              <span className="relative z-10">Обсудить процесс</span>
               <motion.div
                 className="absolute inset-0 border-2 border-primary/0"
                 initial={{ borderColor: 'rgba(107, 127, 215, 0)' }}
