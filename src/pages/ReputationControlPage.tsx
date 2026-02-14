@@ -139,8 +139,8 @@ const ReputationControlPage = () => {
 
         {/* 2. Проблемный блок */}
         <section className="section relative overflow-hidden" style={{ backgroundColor: '#050505' }}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
               {/* Когда нет системы */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -148,10 +148,10 @@ const ReputationControlPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-foreground">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-foreground">
                   Когда нет системы:
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-10">
                   {problemsWithout.map((problem, index) => (
                     <motion.div
                       key={index}
@@ -159,10 +159,10 @@ const ReputationControlPage = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex items-start gap-4 pl-8 relative"
+                      className="flex items-start gap-6 pl-12 relative"
                     >
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-red-500/40" />
-                      <p className="text-lg text-foreground-secondary">{problem}</p>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500/40" />
+                      <p className="text-xl sm:text-2xl md:text-3xl text-foreground-secondary leading-relaxed">{problem}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -175,10 +175,10 @@ const ReputationControlPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-primary">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-primary">
                   Когда есть Operis:
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-10">
                   {benefitsWith.map((benefit, index) => (
                     <motion.div
                       key={index}
@@ -186,10 +186,10 @@ const ReputationControlPage = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex items-start gap-4 pl-8 relative"
+                      className="flex items-start gap-6 pl-12 relative"
                     >
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/40" />
-                      <p className="text-lg text-foreground-secondary">{benefit}</p>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/40" />
+                      <p className="text-xl sm:text-2xl md:text-3xl text-foreground-secondary leading-relaxed">{benefit}</p>
                     </motion.div>
                   ))}
                 </div>
