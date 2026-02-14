@@ -140,16 +140,16 @@ const ReputationControlPage = () => {
         {/* 2. Проблемный блок */}
         <section className="section relative overflow-hidden" style={{ backgroundColor: '#050505' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
               {/* Когда нет системы */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col"
+                className="flex flex-col h-full"
               >
-                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-foreground leading-tight">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-foreground leading-tight min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] flex items-start">
                   Когда нет системы:
                 </h3>
                 <div className="space-y-10">
@@ -175,9 +175,9 @@ const ReputationControlPage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col"
+                className="flex flex-col h-full"
               >
-                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-primary leading-tight">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-primary leading-tight min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] flex items-start">
                   Когда есть Operis:
                 </h3>
                 <div className="space-y-10">
